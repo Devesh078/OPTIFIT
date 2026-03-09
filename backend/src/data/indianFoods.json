@@ -1,0 +1,23 @@
+{
+  "roti": { "calories": 120, "protein": 3, "carbs": 22, "fats": 1 },
+  "chapati": { "calories": 120, "protein": 3, "carbs": 22, "fats": 1 },
+  "ghee": { "calories": 45, "protein": 0, "carbs": 0, "fats": 5 },
+  "rice": { "calories": 200, "protein": 4, "carbs": 45, "fats": 1 },
+  "brown rice": { "calories": 216, "protein": 5, "carbs": 45, "fats": 2 },
+  "dal": { "calories": 150, "protein": 9, "carbs": 27, "fats": 1 },
+  "paneer": { "calories": 265, "protein": 18, "carbs": 2, "fats": 20 },
+  "egg": { "calories": 78, "protein": 6, "carbs": 1, "fats": 5 },
+  "chicken breast": { "calories": 165, "protein": 31, "carbs": 0, "fats": 4 },
+  "milk": { "calories": 103, "protein": 8, "carbs": 12, "fats": 2 },
+  "curd": { "calories": 98, "protein": 11, "carbs": 3, "fats": 4 },
+  "banana": { "calories": 105, "protein": 1, "carbs": 27, "fats": 0 },
+  "oats": { "calories": 150, "protein": 5, "carbs": 27, "fats": 3 },
+  "peanut butter": { "calories": 188, "protein": 8, "carbs": 6, "fats": 16 },
+  "butter": { "calories": 102, "protein": 0, "carbs": 0, "fats": 12 },
+  "bread": { "calories": 79, "protein": 3, "carbs": 15, "fats": 1 },
+  "idli": { "calories": 58, "protein": 2, "carbs": 12, "fats": 0 },
+  "dosa": { "calories": 168, "protein": 4, "carbs": 27, "fats": 3 },
+  "sambar": { "calories": 80, "protein": 4, "carbs": 12, "fats": 2 },
+  "upma": { "calories": 192, "protein": 5, "carbs": 32, "fats": 5 },
+  "poha": { "calories": 180, "protein": 4, "carbs": 38, "fats": 2 }
+}
