@@ -1,5 +1,6 @@
 const FoodLog = require("../models/FoodLog");
 const { calculateDailyTotals } = require("../services/nutritionService");
+<<<<<<< HEAD
 const foodService = require("../services/foodService");
 const indianFoods = require("../data/indianFoods.json");
 
@@ -88,10 +89,24 @@ const logFood = async (req, res) => {
     const food = await FoodLog.create({
       userId: req.user._id,
       date: today,   // ✅ FIXED BACK
+=======
+
+const logFood = async (req, res) =>
+{
+  try
+  {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const food = await FoodLog.create({
+      userId: req.user,
+      date: today,
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
       ...req.body
     });
 
     res.status(201).json(food);
+<<<<<<< HEAD
   } catch (error) {
     console.log("LOG FOOD ERROR:", error);
     res.status(500).json({
@@ -114,10 +129,35 @@ end.setHours(23, 59, 59, 999);
     const totals = await calculateDailyTotals(req.user._id, start,end);
     res.json(totals);
   } catch (error) {
+=======
+  }
+  catch(error)
+  {
+    console.log(error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
+
+const getDailyNutrition = async (req, res) =>
+{
+  try
+  {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const totals = await calculateDailyTotals(req.user, today);
+
+    res.json(totals);
+  }
+  catch(error)
+  {
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+<<<<<<< HEAD
 // =========================
 // GET TODAY FOODS
 // =========================
@@ -304,3 +344,10 @@ module.exports = {
   getFoodNutrition,
   deleteFood
 };
+=======
+module.exports =
+{
+  logFood,
+  getDailyNutrition
+};
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089

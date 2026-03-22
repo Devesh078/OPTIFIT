@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 /*const express = require("express");
+=======
+const express = require("express");
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
 const router = express.Router();
 
 const authMiddleware = require("../middleware/authMiddleware");
 
 const {
   logFood,
+<<<<<<< HEAD
   getDailyNutrition,
   getTodayFoods,
   searchFood
@@ -43,3 +48,13 @@ router.get("/search", protect, searchFood);
 router.get("/nutrition", protect, getFoodNutrition);
 router.delete("/delete/:id", protect, deleteFood);
 module.exports = router;
+=======
+  getDailyNutrition
+} = require("../controllers/foodController");
+
+router.post("/log", authMiddleware, logFood);
+
+router.get("/today", authMiddleware, getDailyNutrition);
+
+module.exports = router;
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089

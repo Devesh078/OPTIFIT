@@ -1,6 +1,9 @@
 const Sleep = require("../models/Sleep");
 
+<<<<<<< HEAD
 // 🔹 LOG SLEEP (Already Good)
+=======
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
 const logSleep = async (req, res) => {
   try {
     const { sleepHours } = req.body;
@@ -35,6 +38,7 @@ const logSleep = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
 // 🔹 GET TODAY SLEEP (NEW)
 const getTodaySleep = async (req, res) => {
   try {
@@ -54,3 +58,6 @@ const getTodaySleep = async (req, res) => {
 };
 
 module.exports = { logSleep, getTodaySleep };
+=======
+module.exports = { logSleep };
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089

@@ -5,7 +5,11 @@ const jwt = require("jsonwebtoken");
 // REGISTER
 const registerUser = async (req, res) => {
   try {
+<<<<<<< HEAD
     const { name, email, password, age, height, weight, goal, activityLevel,gender } = req.body;
+=======
+    const { name, email, password, age, height, weight, goal, activityLevel } = req.body;
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
 
     const existingUser = await User.findOne({ email });
 
@@ -23,15 +27,23 @@ const registerUser = async (req, res) => {
       height,
       weight,
       goal,
+<<<<<<< HEAD
       activityLevel,
       gender
+=======
+      activityLevel
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
     });
 
     res.status(201).json({ message: "User registered successfully" });
 
   } catch (error) {
+<<<<<<< HEAD
     console.log("REGISTER ERROR FULL:", error);
     res.status(500).json({ message: error.message });
+=======
+    res.status(500).json({ message: "Server error" });
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
   }
 };
 
@@ -61,6 +73,7 @@ const loginUser = async (req, res) => {
     res.status(200).json({ token });
 
   } catch (error) {
+<<<<<<< HEAD
   console.log("REGISTER ERROR FULL:", error);
   res.status(500).json({ message: error.message });
 }
@@ -118,4 +131,13 @@ module.exports = {
   loginUser,
   getProfile,
   updateProfile
+=======
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+module.exports = {
+  registerUser,
+  loginUser
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
 };

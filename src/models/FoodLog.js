@@ -26,11 +26,15 @@ const foodLogSchema = new mongoose.Schema(
     type: Number,
     required: true
   },
+<<<<<<< HEAD
   unit:
 {
   type: String,
   required: true
 },
+=======
+
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
   calories: Number,
 
   protein: Number,

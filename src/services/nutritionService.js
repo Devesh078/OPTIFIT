@@ -1,5 +1,6 @@
 const FoodLog = require("../models/FoodLog");
 
+<<<<<<< HEAD
 /* ===============================
    🔥 1️⃣ BMR Calculation
 ================================ */
@@ -76,6 +77,14 @@ const calculateDailyTotals = async (userId, date) => {
   const logs = await FoodLog.find({ userId, date });
 
   const totals = {
+=======
+const calculateDailyTotals = async (userId, date) =>
+{
+  const logs = await FoodLog.find({ userId, date });
+
+  const totals =
+  {
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
     calories: 0,
     protein: 0,
     carbs: 0,
@@ -86,7 +95,12 @@ const calculateDailyTotals = async (userId, date) => {
     potassium: 0
   };
 
+<<<<<<< HEAD
   logs.forEach(log => {
+=======
+  logs.forEach(log =>
+  {
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
     totals.calories += log.calories || 0;
     totals.protein += log.protein || 0;
     totals.carbs += log.carbs || 0;
@@ -100,8 +114,12 @@ const calculateDailyTotals = async (userId, date) => {
   return totals;
 };
 
+<<<<<<< HEAD
 module.exports = {
   calculateCalorieGoal,
   calculateProteinGoal,
   calculateDailyTotals
 };
+=======
+module.exports = { calculateDailyTotals };
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089

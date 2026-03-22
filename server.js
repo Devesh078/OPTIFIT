@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require("dotenv").config();
 const connectDB = require("./src/config/db");
 const app = require("./src/app");
@@ -35,3 +36,17 @@ app.get("/api/test", (req, res) => {
 // ✅ Routes
 app.use("/api/auth", require("./src/routes/authRoutes"));
 app.use("/api/food", require("./src/routes/foodRoutes"));
+=======
+require("dotenv").config({ path: __dirname + "/.env" });
+
+const connectDB = require("./src/config/db");
+const app = require("./src/app");
+
+const PORT = 5000;
+
+connectDB();
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+>>>>>>> 0303ee4b5731e0cea6cc5bdb2f10fe0fa642f089
