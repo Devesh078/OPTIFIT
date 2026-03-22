@@ -1,4 +1,9 @@
-const calculateBMR = (weight, height, age) => {
+const calculateBMR = (weight, height, age, gender) => {
+  // Mifflin-St Jeor Formula
+  if (gender === "female") {
+    return 10 * weight + 6.25 * height - 5 * age - 161;
+  }
+  // default male
   return 10 * weight + 6.25 * height - 5 * age + 5;
 };
 
@@ -20,16 +25,25 @@ const getGoalAdjustment = (goal) => {
     case "muscle_build":
       return 300;
     case "weight_loss":
-      return -300;
+      return -400;
     default:
       return 0;
   }
 };
 
 const calculateDailyCalories = (user) => {
-  const bmr = calculateBMR(user.weight, user.height, user.age);
+  const bmr = calculateBMR(
+    user.weight,
+    user.height,
+    user.age,
+    user.gender
+  );
+
   const tdee = bmr * getActivityMultiplier(user.activityLevel);
-  const finalCalories = Math.round(tdee + getGoalAdjustment(user.goal));
+
+  const finalCalories = Math.round(
+    tdee + getGoalAdjustment(user.goal)
+  );
 
   return {
     bmr: Math.round(bmr),
@@ -38,4 +52,26 @@ const calculateDailyCalories = (user) => {
   };
 };
 
-module.exports = { calculateDailyCalories };
+const calculateProteinTarget = (user, sleepHours = 8) => {
+  let basePerKg = 1.6;
+
+  if (user.goal === "muscle_build") basePerKg = 2.2;
+  if (user.goal === "weight_loss") basePerKg = 2.0;
+
+  const baseProtein = user.weight * basePerKg;
+
+  // 💤 Sleep multiplier logic
+  let multiplier = 1;
+
+  if (sleepHours >= 8) multiplier = 1;
+  else if (sleepHours >= 7) multiplier = 1.05;
+  else if (sleepHours >= 6) multiplier = 1.1;
+  else multiplier = 1.15;
+
+  return Math.round(baseProtein * multiplier);
+};
+
+module.exports = {
+  calculateDailyCalories,
+  calculateProteinTarget
+};
